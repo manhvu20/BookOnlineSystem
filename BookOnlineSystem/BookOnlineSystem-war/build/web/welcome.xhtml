@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+    <title>Trang chủ</title>
+</h:head>
+<h:body>
+    <h1>Xin chào, #{userManagementBean.currentUser.name}!</h1>
+    <h:form>
+        <fieldset>
+            <legend>Chức năng chính</legend>
+            <h:commandLink value="Quản lý sách" action="bookManagement.xhtml" />
+            <h:commandLink value="Giỏ hàng" action="cart.xhtml" />
+            <h:commandLink value="Thanh toán" action="payment.xhtml" />
+            <h:commandLink value="Quản lý đơn hàng" action="orderManagement.xhtml" rendered="#{userManagementBean.currentUser.isAdmin}" />
+            <h:commandLink value="Quản lý người dùng" action="userManagement.xhtml" rendered="#{userManagementBean.currentUser.isAdmin}" />
+        </fieldset>
+    </h:form>
+</h:body>
+</html>
+
+
